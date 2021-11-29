@@ -10,11 +10,9 @@ html {
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-    width: 800px;
-    margin-top: 0px;
-    margin-bottom: 0px;
-    margin-right: auto;
-    margin-left: auto;
+    width: 99%;
+    max-width: 960px;
+    margin: 0 auto;
     border: 3px solid #931420;
     background-color: #fffded;
 
@@ -33,8 +31,7 @@ header {
 
 header img {
     float: left;
-    padding-right: 30px;
-    padding-left: 30px;
+    padding-left: 3.75%;
 }
 
 header h2 {
@@ -59,11 +56,11 @@ header h3 {
 }
 #nav_menu ul li {
     float: left;
+    width: 20%;
 }
 
 #nav_menu ul li a {
     display: block;
-    width: 160px;
     text-align: center;
     background-color: #800000;
     padding: 1em 0;
@@ -78,6 +75,7 @@ header h3 {
 }
 
 #nav_menu ul ul {
+    width: 100%;
     display: none;
     position: absolute;
     top: 100%;
@@ -103,11 +101,9 @@ main {
 }
 
 section {
-    width: 525px;
+    width: 65.625%;
     float: right;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 20px;
+    padding: 0 2.5% 20px 2.5%;
 }
 
 section p {
@@ -141,7 +137,8 @@ section h2 {
 
 article {
     padding: .5em 0;
-
+    border-top: 2px solid #800000;
+    border-bottom: 2px solid #800000;
 }
 
 article h2 {
@@ -158,11 +155,13 @@ article img {
     float: right;
     margin: .5em 0 1em 1em;
     border: 1px solid black;
+    max-width: 40%;
+    min-width: 150px;
 }
 aside {
-    width: 215px;
-    float:right;
-    padding: 0 0 20px 20px;
+    width: 22.3959%;
+    float: right;
+    padding: 0 0 20px 2.5%;
 }
 
 aside h2 {
@@ -184,10 +183,56 @@ footer {
     background-color: #931420;
     clear:both;
 }
+
 footer p {
     text-align: center;
     color: white;
-    padding-top: 1em;
-    padding-bottom: 1em;
+    padding: 1em 0;
 }
-/* the styles for the footer */
+
+@media only screen and (max-width: 959px) {
+    section h1 { font-size: 135%; }
+    section h2, aside h2 {font-size: 120%; }
+
+    @media only screen and (max-width: 767px) {
+        header img {float: none; }
+        header {text-align: center; }
+        section {
+            float: none;
+            width: 95%;
+        }
+
+        aside {
+            float: none;
+            padding-right: 2.5%;
+            width: 95%;
+        }
+
+        article img {
+            max-width: 30%;
+        }
+
+        #speakers {
+            -moz-column-count: 2;
+            -webkit-column-count: 2;
+            column-count: 2;
+        }
+
+        #nav_menu {
+            display: none;
+        }
+
+        #mobile_menu {
+            display: block;
+        }
+
+        .slicknav_menu {
+            background-color: #800000 !important;
+        }
+    }
+
+
+    @media only screen and (max-width: 479px) {
+        body {
+            font-size: 90%;
+        }
